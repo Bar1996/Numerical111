@@ -1,6 +1,9 @@
 import numpy as np
-from numpy.linalg import norm, inv
+from numpy.linalg import norm
 
+print('Date: 19/02/24, Group members: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463'
+          ' Bar Cohen 316164938\n Git: https://github.com/Bar1996/Numerical111/blob/main/LinearEquations/gaussian_elimination.py,'
+          ' Name: Bar Cohen ')
 
 def gaussianElimination(mat):
     N = len(mat)
@@ -85,10 +88,13 @@ def backward_substitution(mat):
 
 if __name__ == '__main__':
 
-    A_b = [[1, -1, 2, -1, -8],
-        [2, -2, 3, -3, -20],
-        [1, 1, 1, 0, -2],
-        [1, -1, 4, 3, 4]]
+    A_b = [[2, 1, 0, -3],
+           [3, -1, 0, 1],
+           [1, 4, -2, -5]]
+
+    print("Matrix:")
+    for row in A_b:
+        print(row[:-1], "|", row[-1])
 
     result = gaussianElimination(A_b)
     if isinstance(result, str):
@@ -97,3 +103,8 @@ if __name__ == '__main__':
         print("\nSolution for the system:")
         for x in result:
             print("{:.6f}".format(x))
+
+
+        coefficient_matrix = np.array(A_b)[:, :-1]
+        coefficient_matrix_norm = norm(coefficient_matrix)
+        print("\nAnswer:", coefficient_matrix_norm)
