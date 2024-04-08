@@ -86,18 +86,24 @@ class Spline:
         return q
 
 if __name__ == "__main__":
-        # Given points
-        points = [(0.3, -2.5), (0.1, -2), (1.25, -1.1), (1.2, 1.4), (3, 6)]
+    points = [(0.2, 3.7241), (0.35, 3.9776), (0.45, 4.0625), (0.6, 2.9776), (0.75, 3.7241)]
 
-        # Separate x and y coordinates
-        xs = [point[0] for point in points]
-        ys = [point[1] for point in points]
+    # Separate x and y coordinates
+    xs = [point[0] for point in points]
+    ys = [point[1] for point in points]
 
-        # Create a spline
-        spline = Spline(xs, ys)
+    # Create a spline
+    spline = Spline(xs, ys)
 
-        # Interpolated values at x=0.45 and x=0.6
-        x_values = [0.45, 0.6]
-        for x_val in x_values:
-            interpolated_value = spline.at(x_val)
-            print(f"f({x_val}) = {interpolated_value}")
+    # Interpolated values at x=0.45 and x=0.6
+    x_values = [0.4, 0.65]
+
+    print('Date: 08/04/24, Group members: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463'
+          ' Bar Cohen 316164938\n Git: https://github.com/Bar1996/Numerical111/blob/main/LinearEquations/Cubic_spline_interpolation.py,'
+          ' Name: Bar Cohen ')
+    print(f'\npoints: {points}')
+    print(f'x_values: {x_values}\n')
+
+    for x_val in x_values:
+        interpolated_value = spline.at(x_val)
+        print(f"f({x_val}) = {interpolated_value}")

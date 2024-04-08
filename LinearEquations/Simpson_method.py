@@ -38,12 +38,19 @@ def simpsons_rule(f, a, b, n):
 
 
 if __name__ == '__main__':
-    f = lambda x: math.e ** (x ** 2)
-    n = 4
-    a=0
-    b=1
+    f = lambda x: (6*x**2 - math.cos(x**4 - x + 2)) / (x**2 + x + 2)
+    n = 146
 
+    a=3.0
+    b=4.1
 
+    print('Date: 08/04/24, Group members: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463'
+          ' Bar Cohen 316164938\n Git: https://github.com/Bar1996/Numerical111/blob/main/LinearEquations/Simpson_method.py,'
+          ' Name: Bar Cohen ')
+    print("f = lambda x: math.e ** (x ** 2)")
+    print(f"n = {n}")
+    print(f"a = {a}")
+    print(f"b = {b}")
 
     print( f" Division into n={n} sections ")
     integral = simpsons_rule(f, a, b, n)
