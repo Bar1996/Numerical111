@@ -1,5 +1,6 @@
 import numpy as np
-from numpy.linalg import norm
+from condition_of_linear_equations import norm
+
 
 
 
@@ -86,17 +87,20 @@ def backward_substitution(mat):
 
 if __name__ == '__main__':
 
-    A_b = [[-1, 1, 3, -3, 1, -1],
-           [3, -3, -4, 2, 3, 18],
-           [2, 1, -5, -3, 5, 6],
-           [-5, -6, 4, 1, 3, 22],
-           [3, -2, -2, -3, 5, 10]]
-    print('Date: 18/03/24, Group members: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463'
+    A_b =  [[2, 1, 0, -3],
+           [3, -1, 0, 1],
+           [1, 4, -2, -5]]
+    A = np.array([[2, 1, 0],
+                  [3, -1, 0],
+                  [1, 4, -2]])
+    print('Date: 08/04/24, Group members: Raphael Benoliel 209946854, Daniel Vaknin 314753161, Maor Hadad 312469463'
           ' Bar Cohen 316164938\n Git: https://github.com/Bar1996/Numerical111/blob/main/LinearEquations/gaussian_elimination.py,'
           ' Name: Bar Cohen ')
-    print("Insert Matrix:")
+    print("A_b: ")
     for row in A_b:
         print(row[:-1], "|", row[-1])
+    print(f'\nA: {A}')
+
 
     result = gaussianElimination(A_b)
     if isinstance(result, str):
@@ -105,5 +109,10 @@ if __name__ == '__main__':
         print("\nSolution for the system:")
         for x in result:
             print("{:.6f}".format(x))
+    value = norm(A) + 4
 
+    print("\nNorm of A: ", norm(A), "\n")
+
+    # Print the value obtained by adding the norm of the matrix of coefficients with the question number
+    print("sum of  the norm of the coefficients matrix and the question number(4):", value)
 
