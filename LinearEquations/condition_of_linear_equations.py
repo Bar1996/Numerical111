@@ -54,5 +54,4 @@ if __name__ == '__main__':
 
     print("\n\n\nMax Norm of A:", norm(A), "\n")
 
-    # Print the value obtained by adding the norm of the matrix of coefficients with the question number
     print("sum of  the norm of the coefficients matrix and the question number(4):", value)
